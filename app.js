@@ -24,6 +24,17 @@ function adicionarLista() {
         let novoAmigo = document.createElement('li');   // Cria um <li>
         novoAmigo.textContent = amigos[i];              // Define o texto do item
         lista.appendChild(novoAmigo);                   // Insere o <li> em <ul>
-        console.log(i);
     }
+}
+
+function sortearAmigo() {
+    if(amigos.length == 0) {
+        alert("Nao foi possivel fazer o sorteio. Voce nao inseriu nenhum amigo na lista ainda.");
+        return;
+    }
+
+    let amigoEscolhido = parseInt(Math.random() * amigos.length);
+
+    let lista = document.getElementById('resultado');
+    lista.innerHTML = '<p>O amigo sorteado é: ' + amigos[amigoEscolhido] + '</p>'; 
 }
